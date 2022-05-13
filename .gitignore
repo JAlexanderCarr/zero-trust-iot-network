@@ -1,0 +1,17 @@
+# Ignoring unnecessary files
+venv/
+security/certs/
+client/bin/
+client/build/
+server/database.db
+
+# Ignoring python files
+*.py[cod]
+
+# Ignoring C++ files
+*.d
+*.o
+*.exe
+
+# Ignoring log files
+*.log
