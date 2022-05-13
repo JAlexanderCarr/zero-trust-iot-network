@@ -26,25 +26,9 @@ using namespace std::chrono;
 const string DFLT_ADDRESS { "localhost" };
 const string CLIENT_ID { "paho-cpp-data-publish" };
 
-static char *certificate = "../security/certs/ca.crt";
-static char *certificate_authority = "../security/certs/ca.crt";
-static char *private_key = "../security/certs/ca.key";
-static char *certificate_pem = "../security/certs/ca.pem";
-
-string exec(string command) {
-   char buffer[128];
-   string result = "";
-   FILE* pipe = popen(command.c_str(), "r");
-   if (!pipe) {
-      return "popen failed!";
-   }
-   while (!feof(pipe)) {
-      if (fgets(buffer, 128, pipe) != NULL)
-         result += buffer;
-   }
-   pclose(pipe);
-   return result;
-}
+static char certificate[] = "../security/certs/ca.crt";
+static char certificate_authority[] = "../security/certs/ca.crt";
+static char private_key[] = "../security/certs/ca.key";
 
 string exec(string command) {
    char buffer[128];

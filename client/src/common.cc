@@ -46,7 +46,6 @@ int resolve_address(const char *host, const char *service, coap_address_t *dst) 
 
 static char *cert_file = NULL;
 static char *key_file = NULL;
-static char *root_ca_file = NULL;
 static char *ca_file = NULL;
 static int verify_peer_cert = 1;
 

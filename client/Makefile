@@ -5,7 +5,7 @@
 SDIR := ./src
 
 # Names of .cc files that have a main() function
-TARGETS = server mqtt_client coap_client
+TARGETS = mqtt_client coap_client
 
 # Names of other .cc files
 CXXFILES = common iot
