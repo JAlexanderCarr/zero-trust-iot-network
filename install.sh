@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # All of these packages are necessary in order to install dependencies and run the server
-# sudo apt update
-# sudo apt upgrade
-# sudo apt-get install build-essential gcc make cmake openssl python3-pip \
-#   python3-venv python3-dev libffi-dev python3-setuptools
+sudo apt update
+sudo apt upgrade
+sudo apt-get install build-essential gcc make cmake openssl python3-pip \
+  python3-venv python3-dev libffi-dev python3-setuptools
 
 # The Paho MQTT C++ library is required to run the MQTT client
 git clone https://github.com/eclipse/paho.mqtt.c.git
@@ -22,8 +22,8 @@ cmake -Bbuild -H. -DPAHO_BUILD_STATIC=ON \
 sudo cmake --build build/ --target install
 sudo ldconfig
 cd ..
-rm -rf paho.mqtt.c
-rm -rf paho.mqtt.cpp
+sudo rm -rf paho.mqtt.c
+sudo rm -rf paho.mqtt.cpp
 
 # The libcoap C++ library is required to run the COAP client
 git clone https://github.com/obgm/libcoap.git
@@ -35,7 +35,7 @@ sudo make install
 ln -s libssl.so.3 libssl.so
 sudo ldconfig
 cd ..
-rm -rf libcoap
+sudo rm -rf libcoap
 
 # A virtual environment is required to run the server and web interface
 python3 -m venv venv
@@ -53,4 +53,5 @@ sudo python3 setup.py install
 python3 -m pip install pysqlcipher3
 deactivate
 cd ..
-rm -rf pysqlcipher3
+sudo rm -rf pysqlcipher3
+sudo rm -rf ltmain.sh
