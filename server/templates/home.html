@@ -1,0 +1,177 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} ZTA on IoT Network {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}	
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ Main Content ] start -->
+            <div class="row">
+              <!-- order-card start -->
+                      <div class="col-sm-4">
+                          <div class="card">
+                              <div class="card-body bg-patern">
+                                  <div class="row">
+                                      <div class="col-auto">
+                                          <h4>Messages</h4>
+                                      </div>
+                                      <div class="col text-right">
+                                          <i class="feather icon-activity" style="font-size: 2.0em;"></i>
+                                          <!-- <h2 class="mb-0 text-white">826</h2>
+                                          <span class="text-white">8.2%<i class="feather icon-trending-up ml-1"></i></span> -->
+                                      </div>
+                                  </div>
+                                  <!-- <div id="customer-chart"></div> -->
+                                  <!-- <div align="center"><i class="feather icon-activity" style="font-size: 3.0em;"></i></div> -->
+                                  <div class="row mt-3">
+                                      <div class="col">
+                                          <h3 class="m-0"><div id="sent_total"></div></h3>
+                                          <span class="ml-3">Sent</span>
+                                      </div>
+                                      <div class="col">
+                                          <h3 class="m-0"><div id="received_total"></div></h3>
+                                          <span class="ml-3">Received</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body bg-patern">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <h4>IoT Devices</h4>
+                                    </div>
+                                    <div class="col text-right">
+                                        <i class="feather icon-thermometer" style="font-size: 2.0em;"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h3 class="m-0"><div id="clients_conn"></div></h3>
+                                        <span class="ml-3">Connected</span>
+                                    </div>
+                                    <div class="col">
+                                        <h3 class="m-0"><div id="clients_reg"></div></h3>
+                                        <span class="ml-3">Registered</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body bg-patern">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <h4>MQTT Broker</h4>
+                                    </div>
+                                    <div class="col text-right">
+                                        <i class="feather icon-server" style="font-size: 2.0em;"></i>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h3 class="m-0"><div id="broker"></div></h3>
+                                        <span class="ml-3">Status</span>
+                                    </div>
+                                    <div class="col">
+                                        <h3 class="m-0"><div id="subs_count"></div></h3>
+                                        <span class="ml-3">Topics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-3 col-xl-3">
+                          <div class="card bg-c-dark order-card">
+                              <div class="card-body">
+                                  <h4 class="text-white">IoT Devices Connected</h4>
+                                  <h1 class="text-right text-white"><span><div id="clients_conn"></div></span></h1>
+                              </div>
+                          </div>
+                      </div> -->
+                      <!-- <div class="col-md-3 col-xl-3">
+                          <div class="card bg-c-dark order-card">
+                              <div class="card-body">
+                                  <h4 class="text-white">IoT Devices Registered</h4>
+                                  <h1 class="text-right text-white"><span><div id="clients_reg"></div></span></h1>
+                              </div>
+                          </div>
+                      </div> -->
+                      <!-- <div class="col-md-3 col-xl-3">
+                        <div class="card bg-c-dark order-card">
+                            <div class="card-body">
+                                <h4 class="text-white">Topics Subscribed</h4>
+                                <h1 class="text-right text-white"><span><div id="subs_count"></div></span></h1>
+                            </div>
+                        </div>
+                      </div> -->
+            </div>
+            <div class="row">
+                <!-- [ variant-chart ] start -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                          <div class="row">
+                            <div class="col-md-9">
+                              <input type="text" class="form-control" id="chart1">
+                            </div>
+                            <div class="col-md-3">
+                              <button id="chart1-button" type="button" class="btn btn-secondary">Update Graphs</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div id="temp-chart1"></div>
+                        </div>
+                        <div class="card-body">
+                          <div id="press-chart1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card">
+                      <div class="card-header">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <input type="text" class="form-control" id="chart2">
+                          </div>
+                          <div class="col-md-3">
+                            <button id="chart2-button" type="button" class="btn btn-secondary">Update Graphs</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div id="temp-chart2"></div>
+                      </div>
+                      <div class="card-body">
+                        <div id="press-chart2"></div>
+                      </div>
+                  </div>
+              </div>
+                <!-- [ variant-chart ] end -->
+
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="/static/assets/js/pages/chart-apex.js"></script>
+    <script src="/static/assets/js/home.js"></script>
+    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+
+{% endblock javascripts %}
