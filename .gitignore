@@ -7,6 +7,7 @@ server/database.db
 
 # Ignoring python files
 *.py[cod]
+__pycache__/
 
 # Ignoring C++ files
 *.d
