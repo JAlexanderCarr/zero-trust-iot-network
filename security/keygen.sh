@@ -3,6 +3,7 @@
 # Obtaining the ip for the MQTT Broker for certificates
 echo -n "MQTT Broker IP Address: "
 read mqtt_broker
+mkdir certs
 
 # Files for Certificate Authority
 openssl genrsa -out certs/ca.key 2048
