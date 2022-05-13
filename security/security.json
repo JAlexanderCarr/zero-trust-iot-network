@@ -24,6 +24,15 @@
 			"salt":	"JyQ0B9uCjBhccfEM",
 			"iterations":	101
 		}, {
+			"username":	"device-5c:f9:dd:6f:a4:a6",
+			"clientid":	"device-5c:f9:dd:6f:a4:a6",
+			"roles":	[{
+					"rolename":	"admin"
+				}],
+			"password":	"6WPFWvM1MM3PG5mSmajzy7xjaAn8kxGRXpHWaz7kN+Hk3Vf/txs3WW+hqPXVERW3PYy8+kkEXf+QLhEnAVV45g==",
+			"salt":	"vD1DEndYMnfyVOUH",
+			"iterations":	101
+		}, {
 			"username":	"device-e4:5f:01:89:9a:58",
 			"clientid":	"device-e4:5f:01:89:9a:58",
 			"roles":	[{

@@ -15,7 +15,7 @@ import time
 from paho.mqtt import client as mqtt_client
 import hashlib
 from sqlcipher3 import dbapi2 as sqlcipher
-from database_func import *
+from database import *
 import getpass
 from getmac import get_mac_address as gma
 

@@ -37,11 +37,6 @@ sudo ldconfig
 cd ..
 sudo rm -rf libcoap
 
-# A virtual environment is required to run the server and web interface
-python3 -m venv venv
-source venv/bin/activate
-python3 -m pip install -r requirements.txt
-
 # The sqlcipher library for python is required to setup the database
 sudo apt-get install libsqlcipher-dev
 sudo apt-get install libsqlite3-dev
@@ -50,8 +45,13 @@ git clone https://github.com/rigglemania/pysqlcipher3
 cd pysqlcipher3
 python3 setup.py build
 sudo python3 setup.py install
-python3 -m pip install pysqlcipher3
-deactivate
 cd ..
 sudo rm -rf pysqlcipher3
 sudo rm -rf ltmain.sh
+
+# A virtual environment is required to run the server and web interface
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install -r requirements.txt
+deactivate
+

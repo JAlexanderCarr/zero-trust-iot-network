@@ -9,5 +9,6 @@ Jinja2==3.1.1
 MarkupSafe==2.1.1
 paho-mqtt==1.6.1
 pysqlcipher3==1.0.4
+sqlcipher3==0.4.5
 Werkzeug==2.1.1
 zipp==3.8.0

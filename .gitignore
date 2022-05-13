@@ -1,9 +1,15 @@
 # Ignoring unnecessary files
 venv/
-security/certs/
 client/bin/
 client/build/
-server/database.db
+database.db
+
+# Ignoring certificate files
+*.key
+*.pem
+*.crt
+*.srl
+*.csr
 
 # Ignoring python files
 *.py[cod]
