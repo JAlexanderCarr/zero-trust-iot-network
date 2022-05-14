@@ -5,10 +5,10 @@
 SDIR := ./src
 
 # Names of .cc files that have a main() function
-TARGETS = mqtt_client coap_client
+TARGETS = mqtt_client
 
 # Names of other .cc files
-CXXFILES = common iot
+CXXFILES = iot
 
 # Specify the name of the folder where all output will go
 ODIR := ./build
@@ -30,11 +30,10 @@ DFILES = $(patsubst %.o, %.d, $(ALLOFILES))
 
 # Basic tool configuration for GCC/G++.  We will create debug symbols, enable
 # optimizations, and generate dependency information on-the-fly
-pkgconfig = $(shell pkg-config $(1) $(2))
 CXX       = g++
 LD        = g++
-CXXFLAGS  = -MMD -O3 -ggdb -std=c++17 -Wall $(call pkgconfig,--cflags,libcoap-3) -Werror
-LDFLAGS   = $(call pkgconfig,--libs,libcoap-3) -l paho-mqttpp3 -l paho-mqtt3cs -l mraa
+CXXFLAGS  = -MMD -O3 -ggdb -std=c++17 -Wall -Werror
+LDFLAGS   = -l paho-mqttpp3 -l paho-mqtt3cs -l mraa
 
 # Build 'all' by default, and don't clobber .o files after each build
 .DEFAULT_GOAL = all
