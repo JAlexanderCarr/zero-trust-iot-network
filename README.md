@@ -1,7 +1,5 @@
 # Zero Trust IoT Network
 
-Alexander Carr and Emma Mirabelli
-
 This repository contains the source code for the Zero Trust Architecture on Internet of Things Networks capstone project.  This project was completed by Alexander Carr and Emma Mirabelli during their senior year at Lehigh University as a part of the Electrical and Computer Engineering Department.
 
 This code can be used to run an MQTT broker, server, and web interface on a local WiFi network, which receives data from IoT devices.  Below is more information on configuring the Zero Trust Architecture and setting up the network.
@@ -116,3 +114,9 @@ It is necessary to deploy applications in the order they are listed, as they con
 ### IoT Client
 
 
+
+## Authors
+
+Emma Mirabelli - [GitHub](https://github.com/emm422/), [LinkedIn](https://www.linkedin.com/in/emmamirabelli/), [Website](https://emmamirabelli.com/)
+
+Alexander Carr - [GitHub](https://github.com/JAlexanderCarr/), [LinkedIn](https://www.linkedin.com/in/jalexandercarr/)
