@@ -21,37 +21,36 @@ While testing this project, the MQTT broker, server, and web interface were all 
 The server and web interface both are python files that are run in a virtual environment.  In order to set up the virtual environment, the following dependencies must be installed:
 
 ```
-$ sudo apt-get install openssl python3-pip python3-venv python3-dev \
-    libffi-dev python3-setuptools
+sudo apt-get install openssl python3-pip python3-venv python3-dev libffi-dev python3-setuptools
 ```
 
 The server also utilizes a version of sqlite3 that is configured to work with python and supports an encrypted database.  Because the server persists data that needs to be encrypted, it must be installed using the commands below:
 
 ```
-$ sudo apt-get install libsqlcipher-dev
-$ sudo apt-get install libsqlite3-dev
-$ sudo apt-get install sqlcipher
-$ git clone https://github.com/rigglemania/pysqlcipher3
-$ cd pysqlcipher3
-$ python3 setup.py build
-$ sudo python3 setup.py install
+sudo apt-get install libsqlcipher-dev
+sudo apt-get install libsqlite3-dev
+sudo apt-get install sqlcipher
+git clone https://github.com/rigglemania/pysqlcipher3
+cd pysqlcipher3
+python3 setup.py build
+sudo python3 setup.py install
 ```
 
 After installing sqlcipher, the python virtual environment needs to be created and configured.  This should be done in the source directory of this repo as shown below:
 
 ```
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ python3 -m pip install -r requirements.txt
-$ deactivate
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install -r requirements.txt
+deactivate
 ```
 
 ### MQTT Broker
 
-The MQTT broker will be hosted locally using a service called [mosquitto].  The dynamic security plugin will be utilized for authentication, which requires mosquitto to be at least v2.0 or greater.  It can be installed as shown below:
+The MQTT broker will be hosted locally using a service called [mosquitto](https://mosquitto.org/).  The dynamic security plugin will be utilized for authentication, which requires mosquitto to be at least v2.0 or greater.  It can be installed as shown below:
 
 ```
-$ sudo apt-get install mosquitto
+sudo apt-get install mosquitto
 ```
 
 The mosquitto version can be checked with ```mosquitto -h```.
@@ -67,30 +66,28 @@ The IoT client is written in C++ using the [MQTT Paho Library].  This library re
 They can be installed using the commands below:
 
 ```
-$ sudo apt-get install build-essential gcc make cmake
+sudo apt-get install build-essential gcc make cmake
 ```
 
-In order to build and install Paho MQTT, both the C and C++ versions need to be installed.  First, install [paho.mqtt.c] as shown below:
+In order to build and install Paho MQTT, both the C and C++ versions need to be installed.  First, install [paho.mqtt.c](https://github.com/eclipse/paho.mqtt.c) as shown below:
 
 ```
-$ git clone https://github.com/eclipse/paho.mqtt.c.git
-$ cd paho.mqtt.c
-$ git checkout v1.3.8
-$ cmake -Bbuild -H. -DPAHO_ENABLE_TESTING=OFF -DPAHO_BUILD_STATIC=ON \
-    -DPAHO_WITH_SSL=ON -DPAHO_HIGH_PERFORMANCE=ON
-$ sudo cmake --build build/ --target install
-$ sudo ldconfig
+git clone https://github.com/eclipse/paho.mqtt.c.git
+cd paho.mqtt.c
+git checkout v1.3.8
+cmake -Bbuild -H. -DPAHO_ENABLE_TESTING=OFF -DPAHO_BUILD_STATIC=ON -DPAHO_WITH_SSL=ON -DPAHO_HIGH_PERFORMANCE=ON
+sudo cmake --build build/ --target install
+sudo ldconfig
 ```
 
-Then, install [paho.mqtt.cpp] as shown below:
+Then, install [paho.mqtt.cpp]() as shown below:
 
 ```
-$ git clone https://github.com/eclipse/paho.mqtt.cpp
-$ cd paho.mqtt.cpp
-$ cmake -Bbuild -H. -DPAHO_BUILD_STATIC=ON \
-    -DPAHO_BUILD_DOCUMENTATION=TRUE -DPAHO_BUILD_SAMPLES=TRUE
-$ sudo cmake --build build/ --target install
-$ sudo ldconfig
+git clone https://github.com/eclipse/paho.mqtt.cpp
+cd paho.mqtt.cpp
+cmake -Bbuild -H. -DPAHO_BUILD_STATIC=ON -DPAHO_BUILD_DOCUMENTATION=TRUE -DPAHO_BUILD_SAMPLES=TRUE
+sudo cmake --build build/ --target install
+sudo ldconfig
 ```
 
 ## Deployment
