@@ -5,43 +5,7 @@
 		"subscribe":	false,
 		"unsubscribe":	false
 	},
-	"clients":	[{
-			"username":	"admin",
-			"textname":	"Dynsec admin user",
-			"roles":	[{
-					"rolename":	"admin"
-				}],
-			"password":	"7BOuG4vWlrmJbhPTZJSv43SapL3XRdrnXTl2m9VrAlpIVKjgNQXGzlrZnHQz0YeR1ZZBzW5xVonI9MjvZgORkQ==",
-			"salt":	"XfnMhWvhjgOeJ3Qd",
-			"iterations":	101
-		}, {
-			"username":	"device-0c:1c:57:a6:99:1c",
-			"clientid":	"device-0c:1c:57:a6:99:1c",
-			"roles":	[{
-					"rolename":	"iot_device"
-				}],
-			"password":	"V1nNV6JRAaUd/UZW7EPi9t15w1WcUlBk4mL5IPNlDKWQEJdqBSOb+F+k4dK3DfNdUTB0CXD+YUeIjTjasxF2Lw==",
-			"salt":	"JyQ0B9uCjBhccfEM",
-			"iterations":	101
-		}, {
-			"username":	"device-5c:f9:dd:6f:a4:a6",
-			"clientid":	"device-5c:f9:dd:6f:a4:a6",
-			"roles":	[{
-					"rolename":	"admin"
-				}],
-			"password":	"6WPFWvM1MM3PG5mSmajzy7xjaAn8kxGRXpHWaz7kN+Hk3Vf/txs3WW+hqPXVERW3PYy8+kkEXf+QLhEnAVV45g==",
-			"salt":	"vD1DEndYMnfyVOUH",
-			"iterations":	101
-		}, {
-			"username":	"device-e4:5f:01:89:9a:58",
-			"clientid":	"device-e4:5f:01:89:9a:58",
-			"roles":	[{
-					"rolename":	"admin"
-				}],
-			"password":	"z0G4XiT7OFIOIgAAJEutvHW1WQ0NSQ5XnlyZNM1Znez21/tt+w94pdCn6OErxJTszyaAdkB4C+ZVjzuqVtpCcg==",
-			"salt":	"dfEfGLGviLBnEGS3",
-			"iterations":	101
-		}],
+	"clients":	[],
 	"groups":	[],
 	"roles":	[{
 			"rolename":	"admin",
@@ -91,24 +55,6 @@
 			"acls":	[{
 					"acltype":	"publishClientSend",
 					"topic":	"data/#",
-					"priority":	0,
-					"allow":	true
-				}]
-		}, {
-			"rolename":	"iot_server",
-			"acls":	[{
-					"acltype":	"publishClientReceive",
-					"topic":	"#",
-					"priority":	0,
-					"allow":	true
-				}, {
-					"acltype":	"subscribePattern",
-					"topic":	"#",
-					"priority":	0,
-					"allow":	true
-				}, {
-					"acltype":	"unsubscribePattern",
-					"topic":	"#",
 					"priority":	0,
 					"allow":	true
 				}]

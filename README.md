@@ -1,10 +1,18 @@
-# Zero Trust IoT Network
+# Zero Trust Architecture on Internet of Things Networks
 
 This repository contains the source code for the Zero Trust Architecture on Internet of Things Networks capstone project.  This project was completed by Alexander Carr and Emma Mirabelli during their senior year at Lehigh University as a part of the Electrical and Computer Engineering Department.
 
-This code can be used to run an MQTT broker, server, and web interface on a local WiFi network, which receives data from IoT devices.  Below is more information on configuring the Zero Trust Architecture and setting up the network.
+## Description
+
+Internet of Things (IoT) devices have become increasingly common in many households.  Due to the wide range of device types and multitudes of data being relayed over a network, there is no standard level of security for IoT devices.  A Zero Trust Archictecture (ZTA) is an advanced security tactic that removes the assumption of trust given to devices and continually verifies and authenticates devices in a network.  Implementing a ZTA on a network of IoT devices increases the security of the network and ensures safe data transfer between devices.
+
+The outcome of this project is a fully functioning, secure network of IoT devices connected over WiFi and a web interface displaying data and statistics.  All devices in the network are verified upon registration and transaction using multi-factor authentication.  The initial plan supported both MQTT and CoAP communication protocols, however, after extensive implementation testing, we concluded that CoAP does not currently support the encryption functionality to be secure.  Therefore, all data is transmitted through TLS-encrypted MQTT.
+
+A demonstration of the functioning project can be found [here](https://www.youtube.com/watch?v=nJFPdWGKYn4).
  
 ## Requirements
+
+This code can be used to run an MQTT broker, server, and web interface on a local WiFi network, which receives data from IoT devices.  Below is more information on configuring the Zero Trust Architecture and setting up the network.
 
 The applications developed in this project were used and test strictly on Linux devices.
 
@@ -98,19 +106,25 @@ It is necessary to deploy applications in the order they are listed, as they con
 
 ### MQTT Broker
 
+When deploying the MQTT Broker, it is necessary to be in the ```zero-trust-iot-network/``` directory.  The command below starts the broker:
 
+```
+mosquitto -c security/broker.conf
+```
+
+In Progress
 
 ### Server
 
-
+In Progress
 
 ### Web Interface
 
-
+In Progress
 
 ### IoT Client
 
-
+In Progress
 
 ## Authors
 
