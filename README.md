@@ -114,7 +114,7 @@ mosquitto -c security/broker.conf
 
 ### Server
 
-On the same device that is currently running the MQTT Broker, activate the python virtual environment and move to the ```zero-trust-iot-network/python/``` directory.
+On the same device that is currently running the MQTT Broker, activate the python virtual environment and move to the ```zero-trust-iot-network/server/``` directory.
 
 Upon first time deployment only, run the following command to create the SQL database:
 
@@ -130,7 +130,7 @@ python3 server.py
 
 ### Web Interface
 
-While in the ```zero-trust-iot-network/python/``` directory, start the live-updating web interface using the following command:
+While in the ```zero-trust-iot-network/server/``` directory, start the live-updating web interface using the following command:
 
 ```
 flask run
