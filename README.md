@@ -119,7 +119,7 @@ On the same device that is currently running the MQTT Broker, activate the pytho
 Upon first time deployment only, run the following command to create the SQL database:
 
 ```
-python3 server/create_database.py
+python3 create_database.py
 ```
 
 Run the server by executing the following command:
