@@ -9,6 +9,7 @@ Internet of Things (IoT) devices have become increasingly common in many househo
 The outcome of this project is a fully functioning, secure network of IoT devices connected over WiFi and a web interface displaying data and statistics.  All devices in the network are verified upon registration and transaction using multi-factor authentication.  The initial plan supported both MQTT and CoAP communication protocols, however, after extensive implementation testing, we concluded that CoAP does not currently support the necessary encryption functionality.  Therefore, all data is transmitted through TLS-encrypted MQTT.
 
 A demonstration of the functioning project can be found [here](https://www.youtube.com/watch?v=nJFPdWGKYn4).
+The final report for the project is in this repository and entitled CREG_258_Final_Report.pdf.
  
 ## Requirements
 
@@ -113,7 +114,7 @@ mosquitto -c security/broker.conf
 
 ### Server
 
-On the same device that is currently running the MQTT Broker, activate the python virtual environment and move to the ```python/``` directory.
+On the same device that is currently running the MQTT Broker, activate the python virtual environment and move to the ```zero-trust-iot-network/python/``` directory.
 
 Upon first time deployment only, run the following command to create the SQL database:
 
@@ -129,7 +130,7 @@ python3 server.py
 
 ### Web Interface
 
-While in the ```python/``` directory, start the live-updating web interface using the following command:
+While in the ```zero-trust-iot-network/python/``` directory, start the live-updating web interface using the following command:
 
 ```
 flask run
@@ -137,7 +138,7 @@ flask run
 
 ### IoT Client
 
-Migrate to the ```client``` directory to compile and run the client script using the following commands:
+Migrate to the ```zero-trust-iot-network/client/``` directory to compile and run the client script using the following commands:
 
 ```
 make
