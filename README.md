@@ -65,7 +65,7 @@ The mosquitto version can be checked with ```mosquitto -h```.
 
 ### IoT Client
 
-The IoT client is written in C++ using the [MQTT Paho Library].  This library requires the following tools to install:
+The IoT client is written in C++ using the [MQTT Paho Library](https://www.eclipse.org/paho/).  This library requires the following tools to install:
 
 * CMake v3.5 or newer
 * GCC v4.8 or newer or Clang v3.9 or newer
